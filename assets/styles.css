@@ -985,3 +985,54 @@ code { font-size: .88em; }
   .record-sheet { min-height: 130px; }
   .archive-heading strong { font-size: .94rem; }
 }
+
+/* ===================================================================
+   RESTORED INDEX FLOW
+   Retains the original advisory, evidence strip and warning image while
+   keeping the homepage compact and moving detailed material to subpages.
+   =================================================================== */
+.home-hero .wrap { max-width: 1080px; padding-top: 30px; padding-bottom: 32px; }
+.home-hero .eyebrow { margin-bottom: 8px; font-size: .54rem; letter-spacing: .15em; }
+.home-hero h1 { max-width: none; margin-bottom: 8px; font-size: clamp(1.7rem, 2.5vw, 2.05rem); line-height: 1.12; }
+.home-hero .lede { max-width: 68ch; font-size: .84rem; line-height: 1.55; }
+.home-hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 20px; border-color: #cfd5dc; }
+.home-hero .stat { min-height: 88px; padding: 14px 15px; }
+.home-hero .stat .n { margin-bottom: 5px; font-size: 1.05rem; line-height: 1.15; }
+.home-hero .stat .l { font-size: .65rem; line-height: 1.42; }
+.home-hero .hero-media { height: clamp(132px, 15vw, 184px); margin-top: 18px; border-radius: 0; overflow: hidden; }
+.home-hero .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+
+.subject-section { background: #fff; border-top: 1px solid var(--line); }
+.subject-section .wrap { max-width: 920px; }
+
+.home-categories { background: #f3f5f7; border-top: 1px solid var(--line); }
+.home-categories .wrap { max-width: 920px; }
+.home-categories .section-head { margin-bottom: 10px; }
+.category-intro { max-width: 72ch; margin: 0 0 15px; color: var(--muted); font-size: .76rem; }
+.home-categories .cat { grid-template-columns: 155px minmax(0, 1fr); gap: 20px; padding: 16px 0; }
+.home-categories .cat .cat-label { font-size: .78rem; line-height: 1.35; }
+.home-categories .cat .cat-label small { margin-bottom: 5px; font-size: .49rem; }
+.home-categories .cat p { margin: 0; font-size: .76rem; line-height: 1.58; }
+.home-subpage-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 20px; border: 1px solid var(--line); background: #fff; }
+.home-subpage-links a { display: flex; justify-content: space-between; gap: 12px; padding: 12px 14px; border-right: 1px solid var(--line); color: var(--ink); font-size: .67rem; font-weight: 700; line-height: 1.35; }
+.home-subpage-links a:last-child { border-right: 0; }
+.home-subpage-links a:hover { color: var(--oxblood); background: #f8f9fa; }
+
+@media (max-width: 760px) {
+  .home-hero .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-hero .stat:nth-child(2) { border-right: 0; }
+  .home-hero .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .home-hero .hero-media { height: 128px; }
+  .home-categories .cat { grid-template-columns: 1fr; gap: 6px; }
+  .home-subpage-links { grid-template-columns: 1fr; }
+  .home-subpage-links a { border-right: 0; border-bottom: 1px solid var(--line); }
+  .home-subpage-links a:last-child { border-bottom: 0; }
+}
+
+@media (max-width: 460px) {
+  .home-hero .wrap { padding-top: 24px; padding-bottom: 26px; }
+  .home-hero h1 { font-size: 1.55rem; }
+  .home-hero .stat { min-height: 82px; padding: 12px; }
+  .home-hero .stat .n { font-size: .94rem; }
+  .home-hero .hero-media { height: 112px; }
+}
